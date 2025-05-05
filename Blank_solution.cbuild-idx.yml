@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.8.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: Blank_solution.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Cortex-A7/Cortex-A7.cproject.yml
+    - cproject: Cortex-M4/Cortex-M4.cproject.yml
+  cbuilds:
+    - cbuild: Cortex-M4/Cortex-M4.Debug+MCIMX7D7.cbuild.yml
+      project: Cortex-M4
+      configuration: .Debug+MCIMX7D7
+      messages:
+        info:
+          - Blank_solution.cbuild-pack.yml - file is already up-to-date
+          - Blank_solution+MCIMX7D7.cbuild-run.yml - file generated successfully
+          - Cortex-M4.Debug+MCIMX7D7.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@4.1.0

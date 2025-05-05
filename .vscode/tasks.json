@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "arm-debugger.flash",
+            "serialNumber": "${command:device-manager.getSerialNumber}",
+            "programs": "${command:cmsis-csolution.getBinaryFiles}",
+            "cmsisPack": "${command:cmsis-csolution.getTargetPack}",
+            "deviceName": "${command:cmsis-csolution.getDeviceName}",
+            "processorName": "${command:cmsis-csolution.getProcessorName}",
+            "problemMatcher": [],
+            "label": "Flash Device"
+        },
+        {
+            "label": "Linux App build",
+            "type": "shell",
+            "command": "cd Cortex-A7; make",
+            "group": "build",
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Linux App clean",
+            "type": "shell",
+            "command": "cd Cortex-A7; make clean"
+        },
+        {
+            "label": "Linux transfer application image",
+            "type": "shell",
+            "command": "scp out/Cortex-A7/MCIMX7D7/Debug/debug_test root@192.168.0.204:/home/weston/workspace"  //change the IP address to your target's IP address or hostname
+         },
+        {
+            "label": "Linux launch remote gdbserver",
+            "type": "shell",
+            "command": "ssh root@192.168.0.204 'chmod +x /home/weston/workspace/debug_test && gdbserver :1234 /home/weston/workspace/debug_test'"   //change the IP address to your target's IP address or hostname
+        }
+    ]
+}

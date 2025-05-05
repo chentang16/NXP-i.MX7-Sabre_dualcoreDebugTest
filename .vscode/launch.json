@@ -1,0 +1,64 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Arm Debugger",
+            "type": "arm-debugger",
+            "request": "launch",
+            "serialNumber": "${command:device-manager.getSerialNumber}",
+            "programs": "${command:cmsis-csolution.getBinaryFiles}",
+            "cmsisPack": "${command:cmsis-csolution.getTargetPack}",
+            "deviceName": "${command:cmsis-csolution.getDeviceName}",
+            "processorName": "${command:cmsis-csolution.getProcessorName}",
+            "programMode": "ram"
+        },
+        {
+            "name": "CMSIS Debugger: pyOCD",
+            "type": "gdbtarget",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "program": "${command:cmsis-csolution.getBinaryFile}",
+            "gdb": "arm-none-eabi-gdb",
+            "initCommands": [
+                "load C:/MDK_Projects/i.MX7_test/Blank_solution/out/Cortex-M4/MCIMX7D7/Debug/Cortex-M4.hex",
+                "tbreak main"
+            ],
+            "target": {
+                "server": "pyocd",
+                "port": "3333"
+            },
+            "cmsis": {
+                "cbuildRunFile": "MCIMX7D7.cbuild-run.yml"
+            }
+        },
+        {
+            "name": "(gdb) Launch TC",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/out/Cortex-A7/MCIMX7D7/Debug/debug_test",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            //"miDebuggerPath": "C:/arm-gnu-toolchain-14.2.rel1-mingw-w64-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-gdb.exe",
+            "miDebuggerPath": "C:/Users/chetan01/.vcpkg/artifacts/2139c4c6/compilers.arm.arm.none.eabi.gcc/14.2.1/bin/arm-none-eabi-gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable extended-remote debugging",
+                    "text": "target extended-remote 192.168.0.204:1234",   //change the IP address to your target's IP address or hostname
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

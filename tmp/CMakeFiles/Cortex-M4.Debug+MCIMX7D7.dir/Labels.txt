@@ -1,0 +1,16 @@
+# Target labels
+ Cortex-M4.Debug+MCIMX7D7
+# Source files and their labels
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-complete.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-build.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-configure.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-database.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-download.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-executes.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-install.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-mkdir.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-patch.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-test.rule
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-update.rule

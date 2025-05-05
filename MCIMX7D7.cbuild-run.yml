@@ -1,0 +1,117 @@
+cbuild-run:
+  generated-by: csolution version 2.8.0+p30-g8150a7ac
+  solution: Blank_solution.csolution.yml
+  target-type: MCIMX7D7
+  compiler: AC6
+  board: NXP::MCIMX7D-SABRE:Rev B
+  board-pack: Keil::iMX7D_DFP@1.7.8
+  device: NXP::MCIMX7D7
+  device-pack: Keil::iMX7D_DFP@1.7.8
+  output:
+    - file: out/Cortex-M4/MCIMX7D7/Debug/Cortex-M4.axf
+      info: generate by Cortex-M4.Debug+MCIMX7D7
+      type: elf
+      pname: Cortex-M4
+    - file: out/Cortex-M4/MCIMX7D7/Debug/Cortex-M4.hex
+      info: generate by Cortex-M4.Debug+MCIMX7D7
+      type: hex
+      pname: Cortex-M4
+  system-resources:
+    memory:
+      - name: IROM1
+        access: rx
+        start: 0x00000000
+        size: 0x00008000
+        pname: Cortex-M4
+        from-pack: Keil::iMX7D_DFP@1.7.8
+      - name: IRAM1
+        access: rwx
+        start: 0x20000000
+        size: 0x00008000
+        pname: Cortex-M4
+        from-pack: Keil::iMX7D_DFP@1.7.8
+      - name: IRAM2
+        access: rwx
+        start: 0x1FFF0000
+        size: 0x00008000
+        pname: Cortex-M4
+        from-pack: Keil::iMX7D_DFP@1.7.8
+  system-descriptions:
+    - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SVD/MCIMX7D7_A7.svd
+      type: svd
+      pname: Cortex-A7
+    - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SVD/MCIMX7D7_M4.svd
+      type: svd
+      pname: Cortex-M4
+    - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/RTX5.scvd
+      type: scvd
+  debugger:
+    - name: <default>
+      protocol: swd
+      clock: 10000000
+      dbgconf: Cortex-M4/RTE/Device/MCIMX7D7_Cortex-M4/iMX7D_M4.dbgconf
+  debug-vars:
+    vars: |
+      __var ReleaseM4 = 0x00000001;   // Enable & Release Cortex-M4 from Reset
+  debug-sequences:
+    - name: DebugCoreStart
+      pname: Cortex-A7
+    - name: DebugCoreStart
+      blocks:
+        - execute: |
+            __var DHCSR_Addr = 0xE000EDF0;
+            __var A7_AHB_CSW = 0x43000002;
+            __var value = 0;
+        - info: Debugger releases M4 from reset during target connection.
+          if: __ap == 4 && ReleaseM4
+          execute: |
+            __ap = 0;                        // Switch to System AHB AP (M4 AP not usable yet)
+
+            WriteAP(0x4,  0x00000000);       // Init Cortex-A7 AP
+
+            // Program an infinite loop so the M4 has something to execute after reset
+            Write32(0x00180000, 0x20000000);
+            Write32(0x00180004, 0x00000009);
+            Write32(0x00180008, 0xE7FEE7FE);
+
+            // SRC: Enable M4
+            WriteAP(0x00, A7_AHB_CSW);       // CSW
+            WriteAP(0x04, 0x3039000C);       // TAR
+            value = ReadAP(0x0C);            // DRW
+
+            value &= ~0x00000001;        // Deassert Non-Self-Clearing M4 Reset
+            value     |=  0x00000058;        // Mask WDOG3 RST, Enable M4
+
+            WriteAP(0x00, A7_AHB_CSW);       // CSW
+            WriteAP(0x04, 0x3039000C);       // TAR
+            WriteAP(0x0C, value);            // DRW
+            __ap = 4;                        // Switch back to Cortex-M4 AP
+        - execute: |
+            // Enable Core Debug via DHCSR
+            Write32(DHCSR_Addr, 0xA05F0001);
+      pname: Cortex-M4
+    - name: ResetSystem
+      blocks:
+        - execute: |
+            __var value = 0x00000000;
+
+            // Write SRC_M4RCR[SW_M4P_RST|SW_M4C_RST] (Self-Clearing M4 Core + Platform Reset)
+            value  = Read32(0x3039000C);
+            value |= 0x00000006;
+            Write32(0x3039000C, value);
+      pname: Cortex-M4
+  debug-topology:
+    debugports:
+      - dpid: 0
+        accessports:
+          - apid: 0
+            index: 1
+          - apid: 1
+            index: 4
+    processors:
+      - pname: Cortex-A7
+        apid: 0
+      - pname: Cortex-M4
+        apid: 1
+    swj: true
+    sdf: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Debug/iMX7D.sdf

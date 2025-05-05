@@ -1,0 +1,509 @@
+build:
+  generated-by: csolution version 2.8.0
+  solution: ../Blank_solution.csolution.yml
+  project: Cortex-M4.cproject.yml
+  context: Cortex-M4.Debug+MCIMX7D7
+  compiler: AC6
+  board: NXP::MCIMX7D-SABRE:Rev B
+  board-pack: Keil::iMX7D_DFP@1.7.8
+  board-books:
+    - name: http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD
+      title: Overview Page
+      category: overview
+    - name: http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD?tab=In-Depth_Tab
+      title: Getting Started Page
+      category: overview
+  device: NXP::MCIMX7D7:Cortex-M4
+  device-pack: Keil::iMX7D_DFP@1.7.8
+  device-books:
+    - name: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Documents/dui0553a_cortex_m4_dgug.pdf
+      title: Cortex-M4 Generic User Guide
+    - name: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Documents/IMX7DRM.pdf
+      title: i.MX 7Dual Applications Processor Reference Manual
+  dbgconf:
+    - file: RTE/Device/MCIMX7D7_Cortex-M4/iMX7D_M4.dbgconf
+      version: 0.0.0
+  processor:
+    fpu: sp
+    core: Cortex-M4
+  packs:
+    - pack: ARM::CMSIS-Compiler@2.1.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0
+    - pack: ARM::CMSIS-RTX@5.9.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0
+    - pack: ARM::CMSIS@6.1.0
+      path: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0
+    - pack: Keil::iMX7D_DFP@1.7.8
+      path: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8
+  optimize: debug
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=gnu11
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+      - -std=c99
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Wno-packed
+      - -Wno-missing-variable-declarations
+      - -Wno-missing-prototypes
+      - -Wno-missing-noreturn
+      - -Wno-sign-conversion
+      - -Wno-nonportable-include-path
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+    CPP:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+      - -xc++
+      - -std=c++11
+      - -fno-exceptions
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+      - -Wno-packed
+      - -Wno-missing-variable-declarations
+      - -Wno-missing-prototypes
+      - -Wno-missing-noreturn
+      - -Wno-sign-conversion
+      - -Wno-nonportable-include-path
+      - -Wno-reserved-id-macro
+      - -Wno-unused-macros
+      - -Wno-documentation-unknown-command
+      - -Wno-documentation
+    Link:
+      - --entry=Reset_Handler
+      - --info summarysizes
+      - --summary_stderr
+      - --diag_suppress=L6314W
+      - --library_type=microlib
+      - --map
+      - --load_addr_map_info
+      - --xref
+      - --callgraph
+      - --symbols
+      - --info sizes
+      - --info totals
+      - --info unused
+      - --info veneers
+      - --strict
+  define:
+    - __MICROLIB
+    - _RTE_
+    - iMX7D_M4
+  define-asm:
+    - __MICROLIB
+    - _RTE_
+    - iMX7D_M4
+  add-path:
+    - RTE/CMSIS
+    - RTE/Device/MCIMX7D7_Cortex-M4
+    - RTE/_Debug_MCIMX7D7
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Common
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Device/Include
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc
+  add-path-asm:
+    - RTE/CMSIS
+    - RTE/Device/MCIMX7D7_Cortex-M4
+    - RTE/_Debug_MCIMX7D7
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+    - ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Common
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Device/Include
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4
+    - ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc
+  output-dirs:
+    intdir: ../tmp
+    outdir: ../out/Cortex-M4/MCIMX7D7/Debug
+    rtedir: RTE
+  output:
+    - type: elf
+      file: Cortex-M4.axf
+    - type: hex
+      file: Cortex-M4.hex
+  components:
+    - component: ARM::CMSIS-Compiler:CORE@1.1.0
+      condition: ARMCC CortexDevice
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      selected-by: ARM::CMSIS-Compiler:CORE
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/source/armcc/retarget_io.c
+          category: sourceC
+          version: 1.1.0
+    - component: ARM::CMSIS-Compiler:STDERR:Custom@1.1.0
+      condition: CORE
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      selected-by: ARM::CMSIS-Compiler:STDERR:Custom
+      implements: CMSIS-Compiler:STDERR@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/template/stdio/stderr_user.c
+          category: sourceC
+          attr: template
+          version: 1.1.0
+          select: STDERR User Template
+    - component: ARM::CMSIS-Compiler:STDIN:Custom@1.1.0
+      condition: CORE
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      selected-by: ARM::CMSIS-Compiler:STDIN:Custom
+      implements: CMSIS-Compiler:STDIN@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/template/stdio/stdin_user.c
+          category: sourceC
+          attr: template
+          version: 1.1.0
+          select: STDIN User Template
+    - component: ARM::CMSIS-Compiler:STDOUT:Custom@1.1.0
+      condition: CORE
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      selected-by: ARM::CMSIS-Compiler:STDOUT:Custom
+      implements: CMSIS-Compiler:STDOUT@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/template/stdio/stdout_user.c
+          category: sourceC
+          attr: template
+          version: 1.1.0
+          select: STDOUT User Template
+    - component: ARM::CMSIS:CORE@6.1.0
+      condition: ARMv6_7_8-M Device
+      from-pack: ARM::CMSIS@6.1.0
+      selected-by: ARM::CMSIS:CORE
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include
+          category: include
+          version: 6.1.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Include/tz_context.h
+          category: header
+          version: 6.1.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Template/ARMv8-M/main_s.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: Secure mode 'main' module for ARMv8-M
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Core/Template/ARMv8-M/tz_context.c
+          category: sourceC
+          attr: template
+          version: 1.1.1
+          select: RTOS Context Management (TrustZone for ARMv8-M)
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Documentation/html/Core/index.html
+          category: doc
+          version: 6.1.0
+    - component: ARM::CMSIS:OS Tick:SysTick@1.0.5
+      condition: OS Tick SysTick
+      from-pack: ARM::CMSIS@6.1.0
+      selected-by: ARM::CMSIS:OS Tick:SysTick
+      implements: CMSIS:OS Tick@1.0.1
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Source/os_systick.c
+          category: sourceC
+          version: 1.0.5
+    - component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.0
+      condition: RTX5
+      from-pack: ARM::CMSIS-RTX@5.9.0
+      selected-by: ARM::CMSIS:RTOS2:Keil RTX5&Source
+      implements: CMSIS:RTOS2@2.3.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Documentation/index.html
+          category: doc
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Include/rtx_os.h
+          category: header
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/RTX5.scvd
+          category: other
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/GCC/irq_armv7m.S
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_delay.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_evflags.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_evr.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_kernel.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_lib.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_memory.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_mempool.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_msgqueue.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_mutex.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_semaphore.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_system.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_thread.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Source/rtx_timer.c
+          category: source
+          version: 5.9.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/Events.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Events
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/MemPool.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Memory Pool
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/MsgQueue.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Message Queue
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/Mutex.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Mutex
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/Semaphore.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Semaphore
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/Thread.c
+          category: source
+          attr: template
+          version: 2.0.0
+          select: RTX Thread
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/Timer.c
+          category: source
+          attr: template
+          version: 2.0.1
+          select: RTX Timer
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/main.c
+          category: source
+          attr: template
+          version: 2.1.0
+          select: RTX 'main' function
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-RTX/5.9.0/Template/svc_user.c
+          category: source
+          attr: template
+          version: 1.0.0
+          select: RTX SVC User Table
+        - file: RTE/CMSIS/RTX_Config.c
+          category: source
+          attr: config
+          version: 5.2.0
+        - file: RTE/CMSIS/RTX_Config.h
+          category: header
+          attr: config
+          version: 5.6.0
+    - component: Keil::Board Support&MCIMX7D-SABRE:HW INIT@1.0.0
+      condition: iMX7D M4 CMSIS HW
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Board Support&MCIMX7D-SABRE:HW INIT
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/board.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/board.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/clock_freq.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/clock_freq.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/pin_mux.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/examples/imx7d_sdb_m4/pin_mux.h
+          category: header
+          version: 1.0.0
+    - component: Keil::Board Support&MCIMX7D-SABRE:User I/O Redirect@1.0.0
+      condition: iMX7D M4 CMSIS HW UART
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Board Support&MCIMX7D-SABRE:User I/O Redirect
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Common/retarget_io_user.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/Common/retarget_io_user.h
+          category: header
+          version: 1.0.0
+    - component: Keil::Device:Startup@1.0.0
+      condition: iMX7D M4 CMSIS
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Device:Startup
+      misc:
+        ASM:
+          - -masm=auto
+      files:
+        - file: RTE/Device/MCIMX7D7_Cortex-M4/startup_iMX7D_M4.s
+          category: source
+          attr: config
+          version: 1.0.0
+        - file: RTE/Device/MCIMX7D7_Cortex-M4/system_iMX7D_M4.c
+          category: source
+          attr: config
+          version: 1.0.0
+        - file: RTE/Device/MCIMX7D7_Cortex-M4/system_iMX7D_M4.h
+          category: header
+          attr: config
+          version: 1.0.0
+    - component: Keil::Device:iMX7D HAL:CCM@1.0.0
+      condition: iMX7D M4 CMSIS
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Device:iMX7D HAL:CCM
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc/ccm_analog_imx7d.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc/ccm_imx7d.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/src/ccm_analog_imx7d.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/src/ccm_imx7d.c
+          category: source
+          version: 1.0.0
+    - component: Keil::Device:iMX7D HAL:RDC@1.0.0
+      condition: iMX7D M4 CMSIS
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Device:iMX7D HAL:RDC
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc/rdc.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc/rdc_semaphore.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/src/rdc.c
+          category: source
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/src/rdc_semaphore.c
+          category: source
+          version: 1.0.0
+    - component: Keil::Device:iMX7D HAL:UART@1.0.0
+      condition: iMX7D M4 CMSIS
+      from-pack: Keil::iMX7D_DFP@1.7.8
+      selected-by: Keil::Device:iMX7D HAL:UART
+      files:
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/inc/uart_imx.h
+          category: header
+          version: 1.0.0
+        - file: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8/SDK/platform/drivers/src/uart_imx.c
+          category: source
+          version: 1.0.0
+  apis:
+    - api: CMSIS-Compiler:STDERR@1.1.0
+      condition: CortexDevice
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      implemented-by: ARM::CMSIS-Compiler:STDERR:Custom@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/include/retarget_stderr.h
+          category: header
+          version: 1.1.0
+    - api: CMSIS-Compiler:STDIN@1.1.0
+      condition: CortexDevice
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      implemented-by: ARM::CMSIS-Compiler:STDIN:Custom@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/include/retarget_stdin.h
+          category: header
+          version: 1.1.0
+    - api: CMSIS-Compiler:STDOUT@1.1.0
+      condition: CortexDevice
+      from-pack: ARM::CMSIS-Compiler@2.1.0
+      implemented-by: ARM::CMSIS-Compiler:STDOUT:Custom@1.1.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS-Compiler/2.1.0/include/retarget_stdout.h
+          category: header
+          version: 1.1.0
+    - api: CMSIS:OS Tick@1.0.1
+      from-pack: ARM::CMSIS@6.1.0
+      implemented-by: ARM::CMSIS:OS Tick:SysTick@1.0.5
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include/os_tick.h
+          category: header
+          version: 1.0.1
+    - api: CMSIS:RTOS2@2.3.0
+      from-pack: ARM::CMSIS@6.1.0
+      implemented-by: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.0
+      files:
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/Documentation/html/RTOS2/index.html
+          category: doc
+          version: 2.3.0
+        - file: ${CMSIS_PACK_ROOT}/ARM/CMSIS/6.1.0/CMSIS/RTOS2/Include/cmsis_os2.h
+          category: header
+          version: 2.3.0
+  linker:
+    script: Blinky_M4_CMSIS_RTOS_Blinky.sct
+  groups:
+    - group: Sources
+      files:
+        - file: main.c
+          category: sourceC
+  constructed-files:
+    - file: RTE/_Debug_MCIMX7D7/RTE_Components.h
+      category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: Keil::iMX7D_DFP@1.7.8
+      components:
+        - component: Keil::Board Support&MCIMX7D-SABRE:HW INIT@1.0.0
+        - component: Keil::Board Support&MCIMX7D-SABRE:User I/O Redirect@1.0.0
+        - component: Keil::Device:Startup@1.0.0
+        - component: Keil::Device:iMX7D HAL:CCM@1.0.0
+        - component: Keil::Device:iMX7D HAL:RDC@1.0.0
+        - component: Keil::Device:iMX7D HAL:UART@1.0.0
+    - license: Apache-2.0
+      packs:
+        - pack: ARM::CMSIS-Compiler@2.1.0
+        - pack: ARM::CMSIS-RTX@5.9.0
+        - pack: ARM::CMSIS@6.1.0
+      components:
+        - component: ARM::CMSIS-Compiler:CORE@1.1.0
+        - component: ARM::CMSIS-Compiler:STDERR:Custom@1.1.0
+        - component: ARM::CMSIS-Compiler:STDIN:Custom@1.1.0
+        - component: ARM::CMSIS-Compiler:STDOUT:Custom@1.1.0
+        - component: ARM::CMSIS:CORE@6.1.0
+        - component: ARM::CMSIS:OS Tick:SysTick@1.0.5
+        - component: ARM::CMSIS:RTOS2:Keil RTX5&Source@5.9.0
+        - component: CMSIS-Compiler:STDERR(API)
+        - component: CMSIS-Compiler:STDIN(API)
+        - component: CMSIS-Compiler:STDOUT(API)
+        - component: CMSIS:OS Tick(API)
+        - component: CMSIS:RTOS2(API)

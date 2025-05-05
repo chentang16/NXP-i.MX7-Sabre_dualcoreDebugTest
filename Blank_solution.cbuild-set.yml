@@ -1,0 +1,5 @@
+cbuild-set:
+  generated-by: vscode-cmsis-csolution version 1.52.0
+  environment: {}
+  contexts:
+    - context: Cortex-M4.Debug+MCIMX7D7

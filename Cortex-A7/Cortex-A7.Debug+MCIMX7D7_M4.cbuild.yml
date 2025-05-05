@@ -1,0 +1,46 @@
+build:
+  generated-by: csolution version 2.8.0
+  solution: ../Blank_solution.csolution.yml
+  project: Cortex-A7.cproject.yml
+  context: Cortex-A7.Debug+MCIMX7D7_M4
+  compiler: AC6
+  board: NXP::MCIMX7D-SABRE:Rev B
+  board-pack: Keil::iMX7D_DFP@1.7.8
+  board-books:
+    - name: http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD
+      title: Overview Page
+      category: overview
+    - name: http://www.nxp.com/products/software-and-tools/hardware-development-tools/sabre-development-system/sabre-board-for-smart-devices-based-on-the-i.mx-7dual-applications-processors:RDIMX7DSABREBRD?tab=In-Depth_Tab
+      title: Getting Started Page
+      category: overview
+  packs:
+    - pack: Keil::iMX7D_DFP@1.7.8
+      path: ${CMSIS_PACK_ROOT}/Keil/iMX7D_DFP/1.7.8
+  optimize: none
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+    C:
+      - -std=gnu11
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+    CPP:
+      - -Wno-macro-redefined
+      - -Wno-pragma-pack
+      - -Wno-parentheses-equality
+      - -Wno-license-management
+    Link:
+      - --entry=Reset_Handler
+      - --info summarysizes
+      - --summary_stderr
+      - --diag_suppress=L6314W
+  output-dirs:
+    intdir: ../tmp
+    outdir: ../out/Cortex-A7/MCIMX7D7_M4/Debug
+    rtedir: RTE
+  output:
+    - type: elf
+      file: Cortex-A7.axf

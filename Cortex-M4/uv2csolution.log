@@ -1,0 +1,7 @@
+Error: 0 error(s), 1 warning(s):
+Warnings:
+	Target name changed from 'CMSIS-RTOS Blinky' to 'CMSIS_RTOS_Blinky'
+1 out of 1 target(s) converted
+Created solution: C:/MDK_Projects/Boards/NXP/MCIMX7D-SABRE/Blinky_M4_modified/MDK/Blinky_M4.csolution.yml
+With projects:
+- C:/MDK_Projects/Boards/NXP/MCIMX7D-SABRE/Blinky_M4_modified/MDK/Blinky_M4.cproject.yml

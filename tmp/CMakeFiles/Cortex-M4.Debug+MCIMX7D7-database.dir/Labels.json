@@ -1,0 +1,37 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-database"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-database.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-database.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-configure.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-patch.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-update.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-download.rule"
+		},
+		{
+			"file" : "C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7/src/Cortex-M4.Debug+MCIMX7D7-stamp/Cortex-M4.Debug+MCIMX7D7-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Cortex-M4.Debug+MCIMX7D7"
+		],
+		"name" : "Cortex-M4.Debug+MCIMX7D7-database"
+	}
+}

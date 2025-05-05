@@ -1,0 +1,9 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=source_dir
+command=
+source_dir=C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/Cortex-M4.Debug+MCIMX7D7
+work_dir=
+

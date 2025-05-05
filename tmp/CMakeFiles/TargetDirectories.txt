@@ -1,0 +1,8 @@
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/database.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-build.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-configure.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-executes.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/Cortex-M4.Debug+MCIMX7D7-database.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/edit_cache.dir
+C:/MDK_Projects/i.MX7_test/Blank_solution/tmp/CMakeFiles/rebuild_cache.dir
